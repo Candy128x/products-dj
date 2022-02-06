@@ -252,6 +252,24 @@
     }
 },
 {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$qCl8dk0QtweadLbHPHaRcl$JHQsGYUAJ4SZCVq6Kxmm+a0th6FHFezhapVW5QUUB6c=",
+        "last_login": "2022-02-06T10:27:21.436Z",
+        "is_superuser": true,
+        "username": "ashishs",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-02-06T10:26:31.907Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "contenttypes.contenttype",
     "pk": 1,
     "fields": {
@@ -308,11 +326,217 @@
     }
 },
 {
+    "model": "sessions.session",
+    "pk": "nkmju61l3xqojjdz9wqudwurttii7unq",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pAyMEBduvcMZIBBqoYmpV0Z765NutDtf-_9lwi0rTVsnZcwZXEWSpx-t0jpwW0H-U7tNss0t3WZotwVedAur3Pm5-Vw_w4q9fqt4-hZZYRIxWIBZV0GMtYjGEQV_WjcMFJy1jpkDQ7Qe0hW85B0JC7i_QHG2Tcj:1nGelN:11QvB_YsD8VnraqkW-oBAp9X9BWJmyOnsat3FyuBz9k",
+        "expire_date": "2022-02-20T10:27:21.444Z"
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 1,
+    "fields": {
+        "name": "apple ipad - Model A1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 2,
+    "fields": {
+        "name": "apple ipad - Model B1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 3,
+    "fields": {
+        "name": "apple ipad - Model C1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 4,
+    "fields": {
+        "name": "apple ipad - Model D1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 5,
+    "fields": {
+        "name": "apple ipad - Model E1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 6,
+    "fields": {
+        "name": "apple ipad - Model F1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 7,
+    "fields": {
+        "name": "apple ipad - Model G1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 8,
+    "fields": {
+        "name": "apple ipad - Model H1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 9,
+    "fields": {
+        "name": "apple ipad - Model I1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 10,
+    "fields": {
+        "name": "apple ipad - Model J1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 11,
+    "fields": {
+        "name": "apple ipad - Model K1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 12,
+    "fields": {
+        "name": "apple ipad - Model L1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 13,
+    "fields": {
+        "name": "apple ipad - Model M1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 14,
+    "fields": {
+        "name": "apple ipad - Model N1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 15,
+    "fields": {
+        "name": "apple ipad - Model O1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 16,
+    "fields": {
+        "name": "apple ipad - Model P1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 17,
+    "fields": {
+        "name": "apple ipad - Model Q1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 18,
+    "fields": {
+        "name": "apple ipad - Model R1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 19,
+    "fields": {
+        "name": "apple ipad - Model S1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 20,
+    "fields": {
+        "name": "apple ipad - Model T1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 21,
+    "fields": {
+        "name": "apple ipad - Model U1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
+    "model": "products.productdetails",
+    "pk": 22,
+    "fields": {
+        "name": "apple ipad - Model V1",
+        "price": 2000,
+        "quantity": 5
+    }
+},
+{
     "model": "products.productdetails",
     "pk": 23,
     "fields": {
-        "name": "Apple iPad 2022 - Model A1",
-        "price": 40000,
+        "name": "apple ipad - Model W1",
+        "price": 2000,
         "quantity": 5
     }
 },
@@ -320,35 +544,26 @@
     "model": "products.productdetails",
     "pk": 24,
     "fields": {
-        "name": "Apple iPad 2022 - Model B1",
-        "price": 60000,
-        "quantity": 2
+        "name": "apple ipad - Model X1",
+        "price": 2000,
+        "quantity": 5
     }
 },
 {
     "model": "products.productdetails",
     "pk": 25,
     "fields": {
-        "name": "Apple iPad 2022 - Model C1",
-        "price": 20000,
-        "quantity": 6
+        "name": "apple ipad - Model Y1",
+        "price": 2000,
+        "quantity": 5
     }
 },
 {
     "model": "products.productdetails",
     "pk": 26,
     "fields": {
-        "name": "Apple iPad 2022 - Model D1",
-        "price": 20000,
-        "quantity": 5
-    }
-},
-{
-    "model": "products.productdetails",
-    "pk": 27,
-    "fields": {
-        "name": "Apple iPad 2022 - Model E1",
-        "price": 20000,
+        "name": "apple ipad - Model Z1",
+        "price": 2000,
         "quantity": 5
     }
 }
