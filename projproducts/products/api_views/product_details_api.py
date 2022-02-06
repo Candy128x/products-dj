@@ -18,6 +18,12 @@ class ProductDetailsApiViewSet(viewsets.ModelViewSet):
     serializer_class = ProductDetailsSerializer
 
 
+def send_ex_msg(subject, ex_msg, ex_msg_details):
+    email_service_obj = EmailService()
+    email_service_obj.send_email_v2(email_subject, email_body, to_email)
+    return 1
+
+
 @api_view(['POST'])
 def send_ex_email(request):
     api_response = {'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR, 'status': 'failed', 'messages': [], 'data': []}
@@ -38,6 +44,7 @@ def send_ex_email(request):
     except Exception as ex:
         logger.critical('---send_ex_email---funn---EXCEPTION---', exc_info=True)
         logger.critical(f'---send_ex_email---funn---EXCEPTION--msg: {ex}')
+        api_response.update({'exception_message': [str(ex)]})
     finally:
         logger.info(f'---api_response: {api_response}')
         return Response(api_response)

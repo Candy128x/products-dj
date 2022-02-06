@@ -171,3 +171,49 @@ ashishs@lp7981:.../product-crud-es$
 > > - $ python3 manage.py search_index --rebuild
 
 
+```text
+
+ID: 20201212-162409
+
+Date & Time: 2020-12-12 16:24:09
+Module: admins.api.v1.admin_customer_api_view | Severity: MINOR :sweat_smile:
+class-fun: NA-listing_csv
+URL Method: POST | URL: /admins/api/v1/customer/listing-csv/
+Request: {'ids': [21, 11]}
+Response: NA
+---ex---
+Ex-Type: Cannot resolve keyword 'name' into field. Choices are: confirmorder, contact_no, contact_no_dail_code, country, country_id, created_at, created_by, dob, email, extra, first_name, gender, id, last_name, manageorder, profile_pic, status, updated_at, updated_by, user_proof
+Traceback: Traceback (most recent call last):
+ File "/usr/local/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1863, in add_fields
+   join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+ File "/usr/local/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1566, in setup_joins
+   names[:pivot], opts, allow_many, fail_on_missing=True,
+ File "/usr/local/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1482, in names_to_path
+   "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'name' into field. Choices are: confirmorder, contact_no, contact_no_dail_code, country, country_id, created_at, created_by, dob, email, extra, first_name, gender, id, last_name, manageorder, profile_pic, status, updated_at, updated_by, user_proofDuring handling of the above exception, another exception occurred:Traceback (most recent call last):
+ File "/usr/local/lib/python3.7/site-packages/rest_framework/views.py", line 502, in dispatch
+   response = handler(request, *args, **kwargs)
+ File "/usr/local/lib/python3.7/site-packages/rest_framework/decorators.py", line 50, in handler
+   return func(*args, **kwargs)
+ File "/usr/local/lib/python3.7/contextlib.py", line 74, in inner
+   return func(*args, **kwds)
+ File "/scdj/projsc/admins/api/v1/admin_customer_api_view.py", line 14, in listing_csv
+   result = AdminCustomerRepository.listing_generate_csv(request)
+ File "/scdj/projsc/customers/repositories/admin_customer_repository.py", line 46, in listing_generate_csv
+   resultset = CustomerInfoService.fetch_listing_customer_data(request_data['ids'], csv_columns)
+ File "/scdj/projsc/customers/services/customer_info_service.py", line 84, in fetch_listing_customer_data
+   customer_object = CustomerInfo.objects.filter(id__in=customer_ids).values(*field_list)
+ File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 841, in values
+   clone = self._values(*fields, **expressions)
+ File "/usr/local/lib/python3.7/site-packages/django/db/models/query.py", line 836, in _values
+   clone.query.set_values(fields)
+ File "/usr/local/lib/python3.7/site-packages/django/db/models/sql/query.py", line 2172, in set_values
+   self.add_fields(field_names, True)
+ File "/usr/local/lib/python3.7/site-packages/django/db/models/sql/query.py", line 1886, in add_fields
+   "Choices are: %s" % (name, ", ".join(names)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'name' into field. Choices are: confirmorder, contact_no, contact_no_dail_code, country, country_id, created_at, created_by, dob, email, extra, first_name, gender, id, last_name, manageorder, profile_pic, status, updated_at, updated_by, user_proof
+
+Extra Data: {'HTTP_HOST': '15.207.40.124', 'HTTP_USER_AGENT': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36', 'QUERY_STRING': '', 'REMOTE_HOST': '', 'CONTENT_TYPE': 'application/json', 'SERVER_NAME': '25a87b1a2b3b', 'SERVER_PORT': '80', 'session': {'_SessionBase__session_key': 'qnhtvhk2rls5yn0g1tb0acn3h7ichcsp', 'accessed': True, 'modified': False, 'serializer': <class 'django.core.signing.JSONSerializer'>, 'model': <class 'django.contrib.sessions.models.Session'>, '_session_cache': {'is_authenticated': True, 'session_soon_expire': 1607872246, 'session_is_soon_expire': False, 'session_expire': 1607875846, 'user_session_data': {'username': 'ashish1a', 'email': 'sondagarashish@gmail.com', 'account_type': 'admin', 'user_id': 1, 'acl_slug': ['customer-address-detail', 'customer-address-list', 'customer-address-create', 'customer-address-update', 'customer-address-delete', 'admin-customer-dashboard-detail-by-id', 'create-customer', 'update-customer', 'list-customer', 'detail-customer', 'user-logout', 'customer-pdf', 'customer-csv', 'acl-tree', 'update-product-vendor', 'read-list-product-admin', 'read-detail-product-admin', 'delete-product-admin', 'upgrade-session-user', 'developer-menu', 'create-pro-admin', 'update-pro-admin', 'list-pro-admin', 'detail-pro-admin', 'test-v2b-home', 'request-info-home', 'detail-user-profile-login', 'update-user-profile-login', 'user-change-password', 'user-delete-account', 'product-curd', 'create-product-v2', 'update-product-v2', 'read-list-product-v2', 'read-detail-product-v2', 'delete-product-v2'], 'account_type_user_id': 'admin_1'}, 'customer_id': 21}, 'slacknotify_severity': 4}, 'cookies': "{'csrftoken': '1xYNftuRSoh9gbTfy4yklIzX3MS0bxhQxq77cTbWrzoHT7yiLj29TnAFhcr7kIsX', 'sessionid': 'qnhtvhk2rls5yn0g1tb0acn3h7ichcsp'}", 'remote_addr': '27.4.42.45'}
+--- --- ---
+
+```
