@@ -85,6 +85,9 @@
 > - collect static
 > - $ python3 manage.py collectstatic
 
+> - API status-codes
+> - https://www.django-rest-framework.org/api-guide/status-codes/
+
 
 ---
 ## Elastic Search Command's

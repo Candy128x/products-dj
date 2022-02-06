@@ -10,7 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from decouple import config
 from pathlib import Path
+import logging
+import logging.config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -108,6 +112,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')  #sender's email-id
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  #password associated with above email-id
+EMAIL_BCC = config('EMAIL_BCC').split(',')
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -121,6 +132,41 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Logger
+SET_LOGGER_LEVEL = 'DEBUG'
+logging.config.dictConfig({
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            # 'format': '%(name)-12s %(levelname)-8s %(message)s'
+            'format': '\n[%(asctime)s] %(levelname)s - %(name)s - file: %(module)s - fun: %(funcName)s() - LN: %(lineno)d \n%(message)s'
+        },
+        'file': {
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console'
+        },
+        'file': {
+            'level': SET_LOGGER_LEVEL,
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': '/tmp/debug.log'
+        }
+    },
+    'loggers': {
+        '': {
+            'level': SET_LOGGER_LEVEL,
+            'handlers': ['console', 'file']
+        }
+    }
+})
 
 
 # Static files (CSS, JavaScript, Images)
