@@ -1,2 +1,3 @@
 heroku ps:scale web=1
-python3 projproducts/manage.py runserver
+cd projproducts
+python3 manage.py runserver
