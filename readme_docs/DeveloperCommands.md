@@ -48,6 +48,7 @@
 - => x pip3 install psycopg2
 - => x pip3 install psycopg2-binary
 - => x pip3 install python-decouple
+- => pip install django-crontab --> [link](https://pypi.org/project/django-crontab/)
 
 
 ---
@@ -87,6 +88,14 @@
 
 > - API status-codes
 > - https://www.django-rest-framework.org/api-guide/status-codes/
+
+> - add cron job
+> - $ python manage.py crontab add
+> - show cron job
+> - $ python manage.py crontab show
+> - remove cron job
+> - $ python manage.py crontab remove
+
 
 
 ---

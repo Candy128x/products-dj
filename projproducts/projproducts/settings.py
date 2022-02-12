@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_crontab',
 
     # Custom App
-    'products'
+    'products',
+    'home'
 ]
 
 MIDDLEWARE = [
@@ -98,6 +100,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+CRONJOBS = [
+    # ('*/1 * * * *', 'home.cron_jobs.send_email_cron_job.send_email'),
+    ('* 6 * * *', 'home.cron_jobs.send_email_cron_job.send_email')
+]
 
 
 # Password validation
