@@ -22,9 +22,9 @@ td, th {
 
 <h3>Subject: {{ subject }}</h3>
 <table>
-<tr><td><b>Name</b>: </td><td>{{ name }}</td></tr>
-<tr><td><b>Message</b>: </td><td>{{ message }}</td></tr>
-<tr><td><b>Contact Details</b>: </td><td>{{ contact_details }}</td></tr>
+    {% for data in form_data %}
+        <tr><td><b>{{ data.field }}</b>: </td><td>{{ data.value }}</td></tr>
+    {% endfor %}
 </table>
 
 </body>

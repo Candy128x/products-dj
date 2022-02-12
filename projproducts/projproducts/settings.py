@@ -126,6 +126,8 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')  #sender's email-id
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  #password associated with above email-id
 EMAIL_BCC = config('EMAIL_BCC').split(',')
 
+SEND_EMAIL_API_SALT_KEY = ['57fef2e83b67478972e611318bd7fc76edcfe5f5']
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

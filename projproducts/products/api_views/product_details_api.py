@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from products.models.product_details import ProductDetails
@@ -64,10 +65,12 @@ def send_form_email(request):
     try:
         logger.info(f'---START---')
         logger.debug(f'---request.data: {request.data}')
-        if 1:
-            email_subject = request.data.get('email', {}).get('subject', '')
-            email_body = request.data.get('email', {}).get('body', '')
-            to_email = request.data.get('email', {}).get('to_email', [])
+        # logger.debug(f'---request.header: {request.headers}')
+        api_salt_key_is_valid = request.headers.get('Api-Salt-Key') in settings.SEND_EMAIL_API_SALT_KEY
+        if api_salt_key_is_valid:
+            email_subject = request.data['email']['subject']
+            email_body = request.data['email']['body']
+            to_email = request.data['email']['to_email']
 
             datetime_util_obj = DateTimeUtil()
             email_subject = f'{email_subject} - {datetime_util_obj.get_current_datetime()}'
@@ -80,6 +83,9 @@ def send_form_email(request):
             api_response['status'] = 'success'
             api_response['messages'].append('email send successfully.')
             api_response['data'].append(request.data)
+        else:
+            api_response['messages'].append('missing/invalid Api-Salt-Key!')
+
     except Exception as ex:
         logger.critical('---send_form_email---funn---EXCEPTION---', exc_info=True)
         logger.critical(f'---send_form_email---funn---EXCEPTION--msg: {ex}')
