@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 # env = 'dev'
 env = 'prod'
 
-env_config = Config(RepositoryEnv(f'../.env_{env}'))
+env_config = Config(RepositoryEnv(f'.env_{env}'))
 
 # Application definition
 
@@ -193,6 +193,15 @@ logging.config.dictConfig({
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+MEDIA_URL = '/'
+MEDIA_ROOL = os.path.join(BASE_DIR, '')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
