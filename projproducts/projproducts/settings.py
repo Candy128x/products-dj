@@ -31,8 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-env = 'dev'
-# env = 'prod'
+# env = 'dev'
+env = 'prod'
 
 env_config = Config(RepositoryEnv(f'../.env_{env}'))
 
