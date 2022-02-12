@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 # env = 'dev'
 env = 'prod'
 
-env_config = Config(RepositoryEnv(f'.env_{env}'))
+env_config = Config(RepositoryEnv(f'../.env_{env}'))
 
 # Application definition
 
