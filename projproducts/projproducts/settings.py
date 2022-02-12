@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from decouple import config
+from decouple import config, Config, RepositoryEnv
 from pathlib import Path
 import logging
 import logging.config, os
@@ -31,6 +31,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+env = 'dev'
+# env = 'prod'
+
+env_config = Config(RepositoryEnv(f'../.env_{env}'))
 
 # Application definition
 
@@ -129,9 +133,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')  #sender's email-id
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  #password associated with above email-id
-EMAIL_BCC = config('EMAIL_BCC').split(',')
+EMAIL_HOST_USER = env_config('EMAIL_HOST_USER')  #sender's email-id
+EMAIL_HOST_PASSWORD = env_config('EMAIL_HOST_PASSWORD')  #password associated with above email-id
+EMAIL_BCC = env_config('EMAIL_BCC').split(',')
 
 SEND_EMAIL_API_SALT_KEY = ['57fef2e83b67478972e611318bd7fc76edcfe5f5']
 
