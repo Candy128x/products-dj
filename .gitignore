@@ -10,8 +10,9 @@ __pycache__/
 */migrations/*
 */*/migrations/*
 */media/testcase/*
-#.env*
-.env_dev
+.env*
+#.env_dev
+#
 projdg/media/
 #projdg/db.sqlite3
 #*.sqlite3
