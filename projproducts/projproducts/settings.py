@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from decouple import config
 from pathlib import Path
 import logging
-import logging.config
+import logging.config, os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -67,7 +67,7 @@ REST_FRAMEWORK = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,6 +79,12 @@ TEMPLATES = [
         },
     },
 ]
+
+# SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
+# # Find templates in the same folder as settings.py.
+# TEMPLATE_DIRS = (
+#     os.path.join(SETTINGS_PATH, 'templates'),
+# )
 
 WSGI_APPLICATION = 'projproducts.wsgi.application'
 
@@ -125,7 +131,8 @@ EMAIL_BCC = config('EMAIL_BCC').split(',')
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
