@@ -232,3 +232,17 @@ Extra Data: {'HTTP_HOST': '15.207.40.124', 'HTTP_USER_AGENT': 'Mozilla/5.0 (X11;
 > - online-tool - [link](https://10015.io/tools/md5-encrypt-decrypt)
 > - Dev2022 -> MD5 encrypt -> `c8063b4a4823f1c542487f67a2557d61`
 > - `c8063b4a4823f1c542487f67a2557d61` -> SHA1 encrypt -> `57fef2e83b67478972e611318bd7fc76edcfe5f5`
+
+
+---
+220213 0207p
+## Issue:
+```
+2022-02-13T08:19:57.020948+00:00 app[web.1]:     raise SMTPAuthenticationError(code, resp)
+
+2022-02-13T08:19:57.020993+00:00 app[web.1]: smtplib.SMTPAuthenticationError: (534, b'5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbv\n5.7.14 0U4lDuCSJuXxon4qOVzqg5qsWlmg9f5gR1X9i7LE5it4BEYv56tYsegiR4fV98gqxmZtH\n5.7.14 _SIHoHH2dtb934SwVHHnR6LCiEFv7lwMGoaTYP_J5uFZzVJXucAqSZ1Tym_E4nfW>\n5.7.14 Please log in via your web browser and then try again.\n5.7.14  Learn more at\n5.7.14  https://support.google.com/mail/answer/78754 o17sm2976192qtv.45 - gsmtp')
+```
+**Soln**:
+- StackOverflow: - [link](https://stackoverflow.com/questions/55569031/django-email-sending-on-heroku)
+- Allow less secure apps - [link](https://support.google.com/accounts/answer/6010255?hl=en)
+- Display Unlock Captcha- [link](https://accounts.google.com/b/4/DisplayUnlockCaptcha)

@@ -24,4 +24,5 @@ urlpatterns = [
 
     # -> API's
     path('products/', include('products.urls')),
+    path('home/', include('home.urls')),
 ]

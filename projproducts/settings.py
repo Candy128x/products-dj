@@ -30,7 +30,8 @@ SECRET_KEY = 'django-insecure-whty&kdm971_*xk2mz0wf4_9q9(92_#+qz6=lfc(&-ivxnnjvg
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'https://products-dj-v5.herokuapp.com']
+# ALLOWED_HOSTS = ['*']
 
 # env = 'dev'
 env = 'prod'
