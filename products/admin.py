@@ -20,7 +20,7 @@ def export_as_csv(self, request, queryset):
 
 # Register your models here.
 class ProductDetailsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ['id', 'name', 'price', 'quantity']
+    list_display = ['id', 'name', 'description', 'price', 'category', 'available_quantity']
     search_fields = ('id', 'name')
     actions = [export_as_csv]
     list_per_page = 20
