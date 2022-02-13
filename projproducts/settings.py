@@ -15,6 +15,8 @@ from pathlib import Path
 import logging
 import logging.config, os
 
+# env = 'dev'
+env = 'prod'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,9 +34,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'https://products-dj-v5.herokuapp.com']
 # ALLOWED_HOSTS = ['*']
-
-# env = 'dev'
-env = 'prod'
 
 env_config = Config(RepositoryEnv(f'.env_{env}'))
 
@@ -157,7 +156,10 @@ USE_TZ = True
 
 
 # Logger
-SET_LOGGER_LEVEL = 'DEBUG'
+if env == 'prod':
+    SET_LOGGER_LEVEL = 'ERROR'
+else:
+    SET_LOGGER_LEVEL = 'DEBUG'
 logging.config.dictConfig({
     'version': 1,
     'disable_existing_loggers': False,
