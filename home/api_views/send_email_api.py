@@ -22,7 +22,7 @@ def send_test_email(request):
         if res1:
             api_response['status_code'] = status.HTTP_200_OK
             api_response['status'] = 'success'
-            api_response['messages'].append('email send successfully.')
+            api_response['messages'].append('Test eMail send successfully.')
             api_response['data'].append(res1)
 
     except Exception as ex:
