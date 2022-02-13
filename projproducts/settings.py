@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_crontab',
+    'import_export',
 
     # Custom App
     'products',
@@ -111,6 +112,8 @@ CRONJOBS = [
     ('* 6 * * *', 'home.cron_jobs.send_email_cron_job.send_email')
 ]
 
+IMPORT_EXPORT_IMPORT_PERMISSION_CODE = 'delete'
+IMPORT_EXPORT_EXPORT_PERMISSION_CODE = 'delete'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

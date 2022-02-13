@@ -49,6 +49,7 @@
 - => x pip3 install psycopg2-binary
 - => x pip3 install python-decouple
 - => pip install django-crontab --> [link](https://pypi.org/project/django-crontab/)
+- => pip install django-import-export --> [link](https://www.programink.com/django-tutorial/django-import-export.html)
 
 
 ---
