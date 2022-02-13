@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.http import HttpResponse
 from import_export.admin import ImportExportModelAdmin
-from products.models.product_details import ProductDetails
+from products.models.product_detail import ProductDetail
 import csv
 
 
@@ -26,4 +26,4 @@ class ProductDetailsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_per_page = 20
 
 
-admin.site.register(ProductDetails, ProductDetailsAdmin)
+admin.site.register(ProductDetail, ProductDetailsAdmin)
