@@ -157,6 +157,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+APPN_HOST = '/'
+APPN_ADMIN_NAME = 'DevDeveloper Administration'
+APPN_ADMIN_HOST = '/pro-admin/'
 
 # Logger
 if env == 'prod':

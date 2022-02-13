@@ -19,6 +19,9 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views import debug
 
+admin.site.site_title = admin.site.site_header = settings.APPN_ADMIN_NAME
+admin.site.site_url = settings.APPN_ADMIN_HOST
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', debug.default_urlconf),
