@@ -23,11 +23,11 @@ def send_test_email(request):
             api_response['status_code'] = status.HTTP_200_OK
             api_response['status'] = 'success'
             api_response['messages'].append('email send successfully.')
-            api_response['data'].append(request.data)
+            api_response['data'].append(res1)
 
     except Exception as ex:
-        logger.critical('---send_form_email---funn---EXCEPTION---', exc_info=True)
-        logger.critical(f'---send_form_email---funn---EXCEPTION--msg: {ex}')
+        logger.critical('---send_test_email---funn---EXCEPTION---', exc_info=True)
+        logger.critical(f'---send_test_email---funn---EXCEPTION--msg: {ex}')
         api_response.update({'exception_message': [str(ex)]})
     finally:
         logger.info(f'---api_response: {api_response}')
