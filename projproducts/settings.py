@@ -108,8 +108,8 @@ DATABASES = {
 }
 
 CRONJOBS = [
-    # ('*/1 * * * *', 'home.cron_jobs.send_email_cron_job.send_email'),
-    ('* 6 * * *', 'home.cron_jobs.send_email_cron_job.send_email')
+    ('* * * * *', 'home.cron_jobs.send_email_cron_job.send_email',  '>> cron_job.log'),
+    # ('* 6 * * *', 'home.cron_jobs.send_email_cron_job.send_email')
 ]
 
 IMPORT_EXPORT_IMPORT_PERMISSION_CODE = 'delete'
