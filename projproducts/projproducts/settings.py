@@ -102,8 +102,12 @@ DATABASES = {
 }
 
 CRONJOBS = [
-    # ('*/1 * * * *', 'home.cron_jobs.send_email_cron_job.send_email'),
-    ('* 6 * * *', 'home.cron_jobs.send_email_cron_job.send_email')
+
+    # -> At every minute.
+    ('* * * * *', 'home.cron_jobs.send_email_cron_job.send_email'),
+
+    # -> At every minute past hour 6.
+    # ('* 6 * * *', 'home.cron_jobs.send_email_cron_job.send_email')
 ]
 
 
