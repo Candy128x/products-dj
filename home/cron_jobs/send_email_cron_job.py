@@ -9,9 +9,10 @@ logger = logging.getLogger(__name__)
 
 def send_email():
     try:
-        logger.info(f'---START---')
-        # logger.debug(f'---request.header: {request.headers}')
         datetime_util_obj = DateTimeUtil()
+        _current_dt = datetime_util_obj.get_current_datetime()
+        print(f'---START---current_dt: {_current_dt}')
+        # logger.debug(f'---request.header: {request.headers}')
         email_subject = f'Daily eMail from products-dj - {datetime_util_obj.get_current_datetime()}'
         email_body = {
             "subject": "Daily Test eMail from products-dj",
@@ -21,16 +22,15 @@ def send_email():
         }
         to_email = settings.EMAIL_BCC
 
-        datetime_util_obj = DateTimeUtil()
-        email_subject = f'{email_subject} - {datetime_util_obj.get_current_datetime()}'
+        email_subject = f'{email_subject} - {_current_dt}'
         email_body = render_to_string('send_emails/contact_us_email.html', email_body)
 
         email_service_obj = EmailService()
         email_service_obj.send_email_v2(email_subject, email_body, to_email)
 
     except Exception as ex:
-        logger.critical('---send_form_email---funn---EXCEPTION---', exc_info=True)
-        logger.critical(f'---send_form_email---funn---EXCEPTION--msg: {ex}')
+        print('---send_form_email---funn---EXCEPTION---', exc_info=True)
+        print(f'---send_form_email---funn---EXCEPTION--msg: {ex}')
 
     finally:
         return 1

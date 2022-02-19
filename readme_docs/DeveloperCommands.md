@@ -94,6 +94,8 @@
 > - $ python manage.py crontab add
 > - show cron job
 > - $ python manage.py crontab show
+> - run cron job
+> - $ python3 manage.py crontab run c63ba439b21e9b2b401cc79b69da5f26
 > - remove cron job
 > - $ python manage.py crontab remove
 

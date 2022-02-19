@@ -19,3 +19,4 @@ projdg/media/
 */nohup.out
 nohup.out
 media/*
+cron_job.log
