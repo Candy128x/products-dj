@@ -8,6 +8,16 @@
 - Activate virtual environment 
 - => source venv/bin/activate
 
+### In windows
+- Install virtualenv using
+- => pip install virtualenv
+- Create a virtualenv
+- => virtualenv venv 
+- => virtualenv -p python3.8 venv
+- Activate env
+- => venv\Scripts\activate
+- desctivate env
+- => deactivate
 
 
 ## pip3 install *packages
